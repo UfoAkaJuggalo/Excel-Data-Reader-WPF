@@ -1,0 +1,28 @@
+﻿<Window x:Class="IPG_zad2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IPG_zad2"
+        mc:Ignorable="d"
+        Title="Zadanie 2">
+    <Window.Effect>
+        <DropShadowEffect RenderingBias="Quality" ShadowDepth="8"/>
+    </Window.Effect>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open calc sheet file" Command="{Binding OpenFileCommand}"/>
+                    <Separator/>
+                    <MenuItem Header="_Exit" Command="{Binding ExitCommand}"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+    </Grid>
+
+</Window>
