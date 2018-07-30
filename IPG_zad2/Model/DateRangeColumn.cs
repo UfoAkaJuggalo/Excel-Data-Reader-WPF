@@ -12,5 +12,7 @@ namespace IPG_zad2.Model
         public DateTime DtTo { get; set; }
         public string Title { get; set; }
         public List<bool> EmissionsList { get; set; }
+
+        public DateRangeColumn() => EmissionsList = new List<bool>();
     }
 }

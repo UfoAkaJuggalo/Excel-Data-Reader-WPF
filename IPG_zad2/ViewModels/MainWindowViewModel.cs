@@ -21,7 +21,11 @@ namespace IPG_zad2.ViewModels
             OpenFileDialog openFileDIalog = new OpenFileDialog();
             openFileDIalog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
             if (openFileDIalog.ShowDialog() == true)
+            {
                 excelDataModel.ReadFile(openFileDIalog.FileName);
+                foreach (SheetModel sheet in excelDataModel.fileDataModel.SheetList)
+                    sheet.CalcAveragePricePerLevel();
+            }
             
         }, true);
 

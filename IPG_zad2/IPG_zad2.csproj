@@ -58,6 +58,7 @@
     <Compile Include="Model\DateRangeColumn.cs" />
     <Compile Include="Model\ExcelDataModel.cs" />
     <Compile Include="Model\FileDataModel.cs" />
+    <Compile Include="Model\LevelAveragePrice.cs" />
     <Compile Include="Model\SheetModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Page Include="MainWindow.xaml">
