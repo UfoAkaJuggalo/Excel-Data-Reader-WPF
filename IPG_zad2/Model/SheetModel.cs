@@ -8,6 +8,7 @@ namespace IPG_zad2.Model
 {
     public class SheetModel
     {
+        public string SheetName { get; set; }
         public List<int> Id { get; set; }
         public List<string> Name { get; set; }
         public List<int> Price { get; set; }
@@ -45,11 +46,10 @@ namespace IPG_zad2.Model
                             daysCounter += (int)(emissionRange.DtTo - emissionRange.DtFrom).TotalDays;
                     }
                 }
-                AveragePricePerLevel.Add(new LevelAveragePrice
-                {
-                    Level = level,
-                    AveragePrice = priceCounter / daysCounter
-                });
+                LevelAveragePrice lvlAvgPrice = new LevelAveragePrice { Level = level };
+                if (daysCounter > 0)
+                    lvlAvgPrice.AveragePrice = priceCounter / daysCounter;
+                AveragePricePerLevel.Add(lvlAvgPrice);
             }
         }
     }

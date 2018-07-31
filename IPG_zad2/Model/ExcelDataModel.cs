@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using IPG_zad2.ViewModels;
 using Microsoft.Office.Interop.Excel;
 
 namespace IPG_zad2.Model
@@ -24,6 +25,7 @@ namespace IPG_zad2.Model
             {
                 Range range = sheet.UsedRange;
                 SheetModel modelSheet = new SheetModel();
+                modelSheet.SheetName = sheet.Name;
                 for (int currColumn = 1; currColumn <= range.Columns.Count; currColumn++)
                 {
                     string columnName = (string)(range.Cells[1, currColumn] as Range).Value2;

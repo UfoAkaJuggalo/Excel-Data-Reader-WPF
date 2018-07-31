@@ -25,8 +25,13 @@ namespace IPG_zad2
         public MainWindow()
         {
             InitializeComponent();
-            _mainWindowVM = new MainWindowViewModel();
+            _mainWindowVM = new MainWindowViewModel(DataGridAvgPrice, DataGridMain);
             DataContext = _mainWindowVM;
+        }
+
+        private void MenuItem_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

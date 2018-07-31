@@ -12,6 +12,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
@@ -23,6 +25,20 @@
                 </MenuItem>
             </Menu>
         </DockPanel>
+        <DataGrid Grid.Row="1" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="DataGridMain"/>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" FontSize="12">Średnie dzienne ceny dla poszczególnych poziomów</Label>
+            <DataGrid Grid.Row="1" x:Name="DataGridAvgPrice" AutoGenerateColumns="False" Padding="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Margin="10, 0" Padding="5">&lt; Poprzedni</Button>
+            <TextBox Margin="10,0" Padding="5" MinWidth="150" Text="{Binding CurrentSheetName, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" BorderThickness="0"/>
+            <Button Margin="10, 0" Padding="5">Następny &gt;</Button>
+        </StackPanel>
     </Grid>
 
 </Window>
